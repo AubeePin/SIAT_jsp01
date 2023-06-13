@@ -9,12 +9,14 @@ import java.util.List;
 
 import org.mingyeong.dbcp.JdbcUtil;
 
+
+
 public class SaramDAO {
-	final String SELECT_ALL = "SELECT * FROM SARAM";
-	final String SELECT_ONE = "SELECT * FROM SARAM WHERE SEQ=?";
-	final String INSERT = "INSERT INTO SARAM(SEQ, NAME, AGE, JOB, ADDR, EMAIL,PHONE) VALUES(?, ?, ?, ?, ?, ?, ?)";
-	final String UPDATE = "UPDATE SARAM SET JOB=?,ADDR=?,EMAIL=?,PHONE=? WHERE SEQ=?";
-	final String DELETE = "WHERE SEQ=?";
+	public static final String SELECT_ALL = "SELECT * FROM SARAM";
+	public static final String SELECT_ONE = "SELECT * FROM SARAM WHERE SEQ=?";
+	public static final String INSERT = "insert into saram(seq,id,name,email) values(seq_saram.nextval,?,?,?)";
+	public static final String UPDATE = "UPDATE SARAM SET ID=?, NAME=?, EMAIL=? WHERE SEQ=?";
+	public static final String DELETE = "DELETE FROM SARAM WHERE SEQ=?";
 	
 	Connection conn;
 	PreparedStatement stmt;
@@ -69,7 +71,7 @@ public class SaramDAO {
 		return saram;
 	}
 	
-	private SaramDTO findBySeq(int seq) {
+	public SaramDTO findBySeq(int seq) {
 		SaramDTO saram = null;
 		conn = JdbcUtil.getConnection();
 		try {
@@ -77,7 +79,7 @@ public class SaramDAO {
 			stmt.setInt(1, seq);
 			rs = stmt.executeQuery();
 			if(rs.next()) {
-				
+				//int seq = rs.getInt("seq");
 				String name = rs.getString("name");
 				int age = rs.getInt("age");
 				String job = rs.getString("job");
