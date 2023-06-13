@@ -1,5 +1,5 @@
-<%@page import="org.comstudy.model.SaramDAO"%>
-<%@page import="org.comstudy.model.SaramDTO"%>
+<%@page import="org.mingeyong.model.SaramDAO"%>
+<%@page import="org.mingeyong.model.SaramDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
