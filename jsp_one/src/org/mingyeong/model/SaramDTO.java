@@ -10,11 +10,10 @@ public class SaramDTO {
 	private String phone;
 	
 	public SaramDTO() {
-		
+		this(0,"",0,"","","","");
 	}
 
 	public SaramDTO(int seq, String name, int age, String job, String addr, String email, String phone) {
-		super();
 		this.seq = seq;
 		this.name = name;
 		this.age = age;
@@ -22,6 +21,15 @@ public class SaramDTO {
 		this.addr = addr;
 		this.email = email;
 		this.phone = phone;
+	}
+	public SaramDTO(int seq) {
+		this.seq = seq;
+		this.name = "";
+		this.age = 0;
+		this.job = "";
+		this.addr = "";
+		this.email = "";
+		this.phone = "";
 	}
 
 	public int getSeq() {
