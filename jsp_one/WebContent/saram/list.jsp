@@ -36,6 +36,6 @@ if(list != null && list.size()>0){
 %>
 </table>
 <p>
-	<a href ="insert.jsp">입력</a>
+	<a href ="input_form.jsp">입력</a>
 </p>
 </body>

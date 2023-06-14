@@ -14,8 +14,8 @@ import org.mingyeong.dbcp.JdbcUtil;
 public class SaramDAO {
 	public static final String SELECT_ALL = "SELECT * FROM SARAM";
 	public static final String SELECT_ONE = "SELECT * FROM SARAM WHERE SEQ=?";
-	public static final String INSERT = "insert into saram(seq,id,name,email) values(seq_saram.nextval,?,?,?)";
-	public static final String UPDATE = "UPDATE SARAM SET ID=?, NAME=?, EMAIL=? WHERE SEQ=?";
+	public static final String INSERT = "insert into saram(seq, name, age, job, addr, email, phone) values(seq_saram.nextval,?,?,?,?,?,?)";
+	public static final String UPDATE = "UPDATE SARAM SET name=?, age=?, job=?, addr=?, email=?, phone=? WHERE SEQ=?";
 	public static final String DELETE = "DELETE FROM SARAM WHERE SEQ=?";
 	
 	Connection conn;
@@ -99,13 +99,13 @@ public class SaramDAO {
 		conn = JdbcUtil.getConnection();
 		try {
 			stmt=conn.prepareStatement(INSERT);
-			stmt.setInt(1, dto.getSeq());
-			stmt.setString(2, dto.getName());
-			stmt.setInt(3, dto.getAge());
-			stmt.setString(4, dto.getJob());
-			stmt.setString(5, dto.getAddr());
-			stmt.setString(6, dto.getEmail());
-			stmt.setString(7, dto.getPhone());
+//			stmt.setInt(1, dto.getSeq());
+			stmt.setString(1, dto.getName());
+			stmt.setInt(2, dto.getAge());
+			stmt.setString(3, dto.getJob());
+			stmt.setString(4, dto.getAddr());
+			stmt.setString(5, dto.getEmail());
+			stmt.setString(6, dto.getPhone());
 			int cnt = stmt.executeUpdate();
 			if(cnt>0) {
 			System.out.println("입력 완료!");
