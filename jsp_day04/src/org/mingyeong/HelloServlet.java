@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-package org.mingyeong;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class HelloServlet extends HttpServlet{
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		PrintWriter out = resp.getWriter();
-		out.print("<!DOCTYPE HTML>");
-		out.print("<HTML>");
-		out.print("<BODY>");
-		out.print("<h1>hello word!</h1>");
-		out.print("</BODY>");
-		out.print("</HTML>");
-		out.close();
-	}
-}
-=======
 package org.mingyeong;
 
 import java.io.IOException;
@@ -51,4 +25,3 @@ public class HelloServlet extends HttpServlet{
 		out.close();
 	}
 }
->>>>>>> 1d993694650aab931775d892876beed432f71b42
