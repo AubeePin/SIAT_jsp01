@@ -14,8 +14,8 @@
 SaramDAO dao = new SaramDAO();
 SaramDTO saram = null;
 
-if(request.getParameter("seq")!=null){
-	int seq =Integer.parseInt(request, getInitParameter("seq"));\
+if(request.getParameter("seq") !=null) {
+	int seq =Integer.parseInt(request.getParameter("seq"));
 	saram = dao.findBySeq(seq);
 }
 %>
@@ -32,7 +32,7 @@ if(request.getParameter("seq")!=null){
 			<th>나이</th><td><input name="age" value="<%=saram.getAge()%>" /></td>
 		</tr>
 		<tr>
-			<th>직업</th><td><input name="job" value="<%=saram.getEmail()%>" /></td>
+			<th>직업</th><td><input name="job" value="<%=saram.getJob()%>" /></td>
 		</tr>
 		<tr>
 			<th>주소</th><td><input name="addr" value="<%=saram.getAddr()%>" /></td>

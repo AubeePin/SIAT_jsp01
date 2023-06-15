@@ -124,15 +124,16 @@ public class SaramDAO {
 		conn = JdbcUtil.getConnection();
 		try {
 			stmt=conn.prepareStatement(UPDATE);
-			stmt.setInt(1, dto.getSeq());
-			stmt.setString(2, dto.getName());
-			stmt.setInt(3, dto.getAge());
-			stmt.setString(4, dto.getJob());
-			stmt.setString(5, dto.getAddr());
-			stmt.setString(6, dto.getEmail());
-			stmt.setString(7, dto.getPhone());
+			
+			stmt.setString(1, dto.getName());
+			stmt.setInt(2, dto.getAge());
+			stmt.setString(3, dto.getJob());
+			stmt.setString(4, dto.getAddr());
+			stmt.setString(5, dto.getEmail());
+			stmt.setString(6, dto.getPhone());
+			stmt.setInt(7, dto.getSeq());
 			int cnt = stmt.executeUpdate();
-			if(cnt>0) {
+			if(cnt > 0) {
 			System.out.println("수정 완료!");
 			conn.commit();
 			}else {
