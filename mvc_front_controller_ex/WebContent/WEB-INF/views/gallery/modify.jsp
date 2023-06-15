@@ -7,10 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>파닭 먹고싶다!! 그땐 맛있었는데..</h1>
-	<ul>
-		<li><a href = "apple.do">1번</a></li>
-		<li><a href = "apple2.do">2번</a></li>
-	</ul>
+
+<h1>Gallery 수정</h1>
+
+<hr/>
+<a href="input.do">입력</a> |
+<a href="detail.do">상세보기</a> |
+<a href="modify.do">수정</a>
+
 </body>
 </html>
